@@ -1,4 +1,4 @@
-let games = [
+let titles = [
     {
         game: "Fifa 19",
         image_url: "http://media.contentapi.ea.com/content/www-easports/en_US/fifa/ultimate-team/news/2018/getting-started-with-fut-19/_jcr_content/imageShare.img.jpg",
@@ -17,21 +17,21 @@ let games = [
 
 module.exports = {
     read: (req, res) => {
-        res.status(200).send(games)
+        res.status(200).send(titles)
     },
     create: (req, res) => {
 
-        games.push(req.body);
-        res.status(200).send(games);
+        titles.push(req.body);
+        res.status(200).send(titles);
     },
 
     delete: (req, res) => {
         const { game } = req.params;
-        const updatedGames = game.filter((game, game) => game.name !== game)
+        const updatedGames = game.filter((game, title) => game.titles !== titles)
 
 
-        updatedTitle = games;
-        res.status(200).send(games)
+        updatedTitle = titles;
+        res.status(200).send(titles)
 
     }
 }
