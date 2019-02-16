@@ -12,6 +12,6 @@ app.use(cors());
 
 app.get('/games', controller.read)
 app.post('/games', controller.create)
-app.delete('/games/:name', controller.delete)
+app.delete('/games/:title', controller.delete)
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

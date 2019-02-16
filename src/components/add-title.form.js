@@ -8,9 +8,7 @@ class AddTitleForm extends Component {
         this.state = {
             title: '',
             image_url: '',
-            rating: {
-                max10: ','
-            }
+
         }
     }
 
@@ -21,33 +19,29 @@ class AddTitleForm extends Component {
     handleImageChange = (e) => {
         this.setState({ image_url: e.target.value })
     }
-    handleRatingChange = (e) => {
-        this.setState({ rating: { max10: e.target.value } })
-    }
+
     handleButtonClick = () => {
         this.props.addTitle(this.state)
         this.setState({
             title: '',
             image_url: '',
-            rating: {
-                max10: ''
-            }
+
         })
     }
 
     render() {
         return (
-            <div className='form-container'>
-                <div className='inputs-container'>
-                    <label>Title</label>
-                    <input placeholder='title' value={this.state.title} onChange={this.handleTitleChange}></input>
-                    <label>Image</label>
-                    <input placeholder='image_url' value={this.state.image_url} onChange={this.handleImageChange}></input>
-                    <label>Rating</label>
-                    <input placeholder='rating-max10' value={this.state.rating.max10} onChange={this.handleRatingChange}></input>
+            <div className='add-title-form'>
+                <div>
+                    <form ref="myForm" className="myForm">
+                        <label>Title</label>
+                        <input type="text" placeholder='title' value={this.state.title} onChange={this.handleTitleChange} className='formField'></input>
+                        <label>Image</label>
+                        <input type='text' placeholder='image_url' value={this.state.image_url} onChange={this.handleImageChange} className='formField'></input>
+                    </form>
                 </div>
                 <br />
-                <button onClick={this.handleButtonClick}>Add Title</button>
+                <button onClick={this.handleButtonClick} className='myButton'>Add Title</button>
 
             </div>
 
